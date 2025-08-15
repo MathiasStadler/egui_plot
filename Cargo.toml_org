@@ -1,0 +1,42 @@
+[workspace]
+resolver = "2"
+members = ["egui_plot", "demo", "examples/*"]
+
+
+[workspace.package]
+edition = "2024"
+license = "MIT OR Apache-2.0"
+# rust-version = "1.85"
+version = "0.33.0"
+
+
+[profile.release]
+opt-level = 2 # fast and small wasm
+
+[profile.dev.package."*"]
+# Optimize all dependencies even in debug builds (does not affect workspace packages):
+opt-level = 2
+
+
+[workspace.dependencies]
+egui_plot = { version = "0.33", path = "egui_plot", default-features = false }
+
+ahash = { version = "0.8.11", default-features = false, features = [
+    "no-rng", # we don't need DOS-protection, so we let users opt-in to it instead
+    "std",
+] }
+document-features = "0.2.10"
+eframe = { version = "0.32", default-features = false }
+egui = { version = "0.32", default-features = false }
+egui_kittest = { version = "0.32", default-features = false }
+emath = { version = "0.32", default-features = false }
+env_logger = { version = "0.11.6", default-features = false, features = [
+    "auto-color",
+    "humantime",
+] }
+image = { version = "0.25", default-features = false }
+log = "0.4"
+serde = { version = "1", features = ["derive"] }
+wasm-bindgen-futures = "0.4"
+web-sys = "0.3.70"
+
