@@ -39,6 +39,7 @@
         "egui",
         "emath",
         "expl",
+        "hacknus",
         "humantime",
         "idents",
         "kittest",
