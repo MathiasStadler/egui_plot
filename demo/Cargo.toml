@@ -23,6 +23,7 @@ eframe = { workspace = true, default-features = false, features = [
 ] }
 log.workspace = true
 serde = { workspace = true, features = ["derive"] }
+egui_kittest.workspace = true
 
 # native:
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
@@ -31,7 +32,7 @@ env_logger.workspace = true
 # web:
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 wasm-bindgen-futures.workspace = true
-web-sys.workspace = true # to access the DOM (to hide the loading text)
+web-sys.workspace = true              # to access the DOM (to hide the loading text)
 
 [dev-dependencies]
 egui_kittest = { workspace = true, features = ["snapshot", "wgpu", "eframe"] }

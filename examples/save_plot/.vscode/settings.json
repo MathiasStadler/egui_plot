@@ -3,6 +3,7 @@
         "eframe",
         "egui",
         "hacknus",
-        "humantime"
+        "humantime",
+        "sccache"
     ]
 }
