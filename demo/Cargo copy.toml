@@ -1,0 +1,92 @@
+# before remove
+# warning: /var/trapapa_workspce_codium/egui_plot/demo/Cargo.toml: unused manifest key: bin.0.plugin
+# warning: /var/trapapa_workspce_codium/egui_plot/demo/Cargo.toml: unused manifest key: lib.plugin
+#warning: /var/trapapa_workspce_codium/egui_plot/demo/Cargo.toml: unused manifest key: test.0.plugin
+#warning: /var/trapapa_workspce_codium/egui_plot/egui_plot/Cargo.toml: unused manifest key: lib.plugin
+#warning: /var/trapapa_workspce_codium/egui_plot/examples/borrow_points/Cargo.toml: unused manifest key: bin.0.plugin
+#warning: /var/trapapa_workspce_codium/egui_plot/examples/custom_plot_manipulation/Cargo.toml: unused manifest key: bin.0.plugin
+#warning: /var/trapapa_workspce_codium/egui_plot/examples/legend_sort/Cargo.toml: unused manifest key: bin.0.plugin
+#warning: /var/trapapa_workspce_codium/egui_plot/examples/save_plot/Cargo.toml: unused manifest key: bin.0.plugin
+
+[package]
+name = "demo"
+authors = ["Emil Ernerfeldt <emil.ernerfeldt@gmail.com>"]
+include = ["../LICENSE-APACHE", "../LICENSE-MIT", "**/*.rs", "Cargo.toml"]
+default-run = "demo"
+publish = false
+
+[package.edition]
+workspace = true
+
+[package.version]
+workspace = true
+
+[package.license]
+workspace = true
+
+[package.rust-version]
+workspace = true
+
+[dependencies.eframe]
+workspace = true
+features = ["default_fonts", "glow", "persistence"]
+
+[dependencies.egui]
+workspace = true
+
+[dependencies.egui_kittest]
+workspace = true
+
+[dependencies.egui_plot]
+workspace = true
+features = ["serde"]
+
+[dependencies.log]
+workspace = true
+
+[dependencies.serde]
+workspace = true
+features = ["derive"]
+
+[dev-dependencies.egui_kittest]
+workspace = true
+features = ["snapshot", "wgpu", "eframe"]
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies.env_logger]
+workspace = true
+
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
+
+[target.'cfg(not(target_arch = "wasm32"))'.build-dependencies]
+
+[target.'cfg(target_arch = "wasm32")'.dependencies.wasm-bindgen-futures]
+workspace = true
+
+[target.'cfg(target_arch = "wasm32")'.dependencies.web-sys]
+workspace = true
+
+[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+
+[target.'cfg(target_arch = "wasm32")'.build-dependencies]
+
+[[bin]]
+path = "src/main.rs"
+name = "demo"
+plugin = false
+proc-macro = false
+required-features = []
+
+[[test]]
+path = "tests/plot.rs"
+name = "plot"
+plugin = false
+proc-macro = false
+required-features = []
+
+[lib]
+path = "src/lib.rs"
+name = "demo"
+plugin = false
+proc-macro = false
+required-features = []
+crate-type = ["lib"]

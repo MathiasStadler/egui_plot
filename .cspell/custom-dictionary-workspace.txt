@@ -1,4 +1,15 @@
 # Custom Dictionary Words
+debuginfo
+emilk
 Ernerfeldt
 Haller
+lycheecache
+msvc
 Niederberger
+rustc
+rustls
+rustsec
+sccache
+trapapa
+webpki
+workspce
