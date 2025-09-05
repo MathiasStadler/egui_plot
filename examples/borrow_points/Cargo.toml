@@ -1,19 +1,32 @@
 [package]
 name = "borrow_points"
-version = "0.1.0"
+version = "0.0.1"
 authors = ["Nicolas <bircni@icloud.com>"]
-license.workspace = true
-edition.workspace = true
-rust-version.workspace = true
 publish = false
 
-[lints]
+[package.edition]
 workspace = true
 
-[dependencies]
-eframe = { workspace = true, features = ["default"] }
-egui_plot.workspace = true
-env_logger = { workspace = true, default-features = false, features = [
-    "auto-color",
-    "humantime",
-] }
+[package.license]
+workspace = true
+
+[package.rust-version]
+workspace = true
+
+[dependencies.eframe]
+workspace = true
+features = ["default"]
+
+[dependencies.egui_plot]
+workspace = true
+
+[dependencies.env_logger]
+workspace = true
+features = ["auto-color", "humantime"]
+
+[[bin]]
+path = "src/main.rs"
+name = "borrow_points"
+plugin = false
+proc-macro = false
+required-features = []

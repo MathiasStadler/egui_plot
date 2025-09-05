@@ -1,22 +1,40 @@
 [package]
 name = "save_plot"
-version = "0.1.0"
+version = "0.0.1"
 authors = ["hacknus <l_stoeckli@bluewin.ch>"]
-license.workspace = true
-edition.workspace = true
-rust-version.workspace = true
 publish = false
 
-[lints]
+[package.edition]
+workspace = true
+
+[package.license]
+workspace = true
+
+[package.rust-version]
 workspace = true
 
 [dependencies]
-eframe = { workspace = true, features = ["default"] }
-egui_plot.workspace = true
-image = { workspace = true, features = ["png"] }
 rfd = "0.15.1"
-env_logger = { workspace = true, default-features = false, features = [
-    "auto-color",
-    "humantime",
-] }
 sccache = "0.10.0"
+
+[dependencies.eframe]
+workspace = true
+features = ["default"]
+
+[dependencies.egui_plot]
+workspace = true
+
+[dependencies.env_logger]
+workspace = true
+features = ["auto-color", "humantime"]
+
+[dependencies.image]
+workspace = true
+features = ["png"]
+
+[[bin]]
+path = "src/main.rs"
+name = "save_plot"
+plugin = false
+proc-macro = false
+required-features = []

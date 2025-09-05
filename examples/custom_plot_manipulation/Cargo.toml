@@ -1,20 +1,32 @@
 [package]
 name = "custom_plot_manipulation"
-version = "0.1.0"
+version = "0.0.1"
 authors = ["Ygor Souza <ygor.souza@protonmail.com>"]
-license.workspace = true
-edition.workspace = true
-rust-version.workspace = true
 publish = false
 
-[lints]
+[package.edition]
 workspace = true
 
+[package.license]
+workspace = true
 
-[dependencies]
-eframe = { workspace = true, features = ["default"] }
-egui_plot.workspace = true
-env_logger = { workspace = true, default-features = false, features = [
-    "auto-color",
-    "humantime",
-] }
+[package.rust-version]
+workspace = true
+
+[dependencies.eframe]
+workspace = true
+features = ["default"]
+
+[dependencies.egui_plot]
+workspace = true
+
+[dependencies.env_logger]
+workspace = true
+features = ["auto-color", "humantime"]
+
+[[bin]]
+path = "src/main.rs"
+name = "custom_plot_manipulation"
+plugin = false
+proc-macro = false
+required-features = []
